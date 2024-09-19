@@ -1,0 +1,113 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("./images/fon.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+input {
+  height: 30px;
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #f3e5ab;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  color: #ffff;
+}
+
+.enter-btn {
+  width: 100px;
+  height: 35px;
+  font-size: 14px;
+  background: none;
+  border: 2px solid #f3e5ab;
+  background-color: #f9bcc5;
+  color: #570e0d;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.enter-btn:hover {
+  background-color: #f9bcc5;
+  color: #570e0d;
+}
+
+.todo-item {
+  position: absolute;
+  cursor: move;
+  min-width: 215px;
+  padding: 1em;
+  border-radius: 5px;
+  color: #000000;
+  animation: fadeIn 0.5s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.btn-delete {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border: none;
+  background: none;
+  color: #ff6f61;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-delete:hover {
+  color: #ff0000;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  input {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .enter-btn {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .todo-item {
+    min-width: 180px;
+    font-size: 14px;
+  }
+}
