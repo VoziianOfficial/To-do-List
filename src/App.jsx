@@ -20,7 +20,7 @@ const App = () => {
         id: uuidv4(),
         item: item,
         color: randomColor({
-          luminosity: "#f3e5ab",
+          luminosity: "light",
         }),
         defaultPost: {
           x: 200,
@@ -36,7 +36,7 @@ const App = () => {
   };
 
   const deleteNode = (id) => {
-    setItems(items.filter((item) => item.id !== id));
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   const updatePos = (data, index) => {
@@ -51,6 +51,7 @@ const App = () => {
       newItem();
     }
   };
+
   return (
     <div className="App">
       <div className="wrapper">
@@ -80,6 +81,7 @@ const App = () => {
               <button
                 className="btn-delete"
                 onClick={() => deleteNode(item.id)}
+                onTouchStart={() => deleteNode(item.id)} /* Обработка касания */
               >
                 X
               </button>
